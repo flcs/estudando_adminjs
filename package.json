@@ -1,0 +1,7 @@
+{
+  "name": "admin-generico",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Fernando Carvalho <fernando.carvalho.iff@gmail.com>",
+  "license": "MIT"
+}
