@@ -1,0 +1,10 @@
+{
+  "enable": true,
+  "tabWidth": 2,
+  "useTabs": false,
+  "[typescript]": {
+    "singleAttributePerLine": true,
+    "bracketSpacing": true,
+    "singleQuote": true
+  }
+}
