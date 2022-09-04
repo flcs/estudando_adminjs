@@ -2,9 +2,12 @@ git init .
 yarn init -y
 yarn add -D typescript @types/node ts-node nodemon sucrase prettier
 
-yarn add adminjs @adminjs/express express @types/express express-formidable express-session
+yarn add adminjs @adminjs/express @adminjs/sequelize express \
+    @types/express express-formidable express-session sequelize \
+    @types/sequelize
+    
 yarn add tslib dotenv
-yarn add pg pg-hstore sequelize 
+yarn add pg pg-hstore
 yarn add -D sequelize-cli
 
 
