@@ -7,6 +7,9 @@ import AdminJSExpress from '@adminjs/express';
 import AdminJSSequelize from '@adminjs/sequelize';
 import express from 'express';
 
+// import User from './models/user';
+import UsersResrource from './resources/UsersResource';
+
 
 AdminJS.registerAdapter(AdminJSSequelize);
 
@@ -16,7 +19,7 @@ const app = express();
 const adminJS = new AdminJS({
     databases: [],
     rootPath: '/admin',
-    resources: []
+    resources: [UsersResrource]
 });
 
 const router = AdminJSExpress.buildRouter(adminJS);

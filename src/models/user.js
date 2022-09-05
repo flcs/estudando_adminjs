@@ -6,7 +6,7 @@ import Sequelize, { Model } from 'sequelize';
   class User extends Model {
     static init(sequelize) {
       super.init({
-        initialas: {
+        initials: {
           type: Sequelize.VIRTUAL,
           get() {
             const pedaco = this.name.split(' ');
