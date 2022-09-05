@@ -1,10 +1,10 @@
 // receita de bolo do sequelize
 
-import Sequelize  from 'sequelize';
+import Sequelize from 'sequelize';
 
 import config from '../config/database';
 
-import Model from '../models/xxxx';
+// import Model from '../models/xxxx';
 
 const models = [];
 

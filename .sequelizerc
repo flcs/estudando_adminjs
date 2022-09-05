@@ -1,8 +1,17 @@
-const path = require('path');
+// const path = require('path');
+
+// module.exports = {
+//   'config': path.resolve('src', 'config', 'database.json'),
+//   'models-path': path.resolve('src', 'models'),
+//   'seeders-path': path.resolve('src', 'seeders'),
+//   'migrations-path': path.resolve('src', 'migrations')
+// };
+
+const { resolve } = require('path');
 
 module.exports = {
-  'config': path.resolve('src', 'config', 'database.json'),
-  'models-path': path.resolve('src', 'models'),
-  'seeders-path': path.resolve('src', 'seeders'),
-  'migrations-path': path.resolve('src', 'migrations')
+  config: resolve('src', 'config', 'database.js'),
+  'models-path': resolve('src', 'models'),
+  'migrations-path': resolve('src', 'database', 'migrations'),
+  'seeders-path': resolve('src', 'database', 'seeders')
 };
