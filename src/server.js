@@ -10,6 +10,7 @@ import express from 'express';
 // import User from './models/user';
 import UsersResrource from './resources/UsersResource';
 import ProjectsResource from "./resources/ProjectsResource";
+import TasksResource from "./resources/TasksResource";
 
 
 import locale from './locales'
@@ -23,7 +24,7 @@ const app = express();
 const adminJS = new AdminJS({
     databases: [],
     rootPath: '/admin',
-    resources: [UsersResrource, ProjectsResource],
+    resources: [UsersResrource, ProjectsResource, TasksResource],
     ...locale
 });
 

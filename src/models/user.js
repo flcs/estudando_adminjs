@@ -39,6 +39,8 @@ import Sequelize, { Model } from 'sequelize';
     static associate(models) {
       // define association here
       this.hasMany(models.Project);
+
+      this.hasMany(models.Task);
     }
   }
   // User.init({

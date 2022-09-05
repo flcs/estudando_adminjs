@@ -2,5 +2,19 @@
 # para criar os models
 yarn sequelize-cli model:generate --name User --attributes name:string,email:string,password_hash:string,role:string,status:string
 yarn sequelize-cli model:generate --name Project --attributes name:string,description:string,status:enum,user_id:integer
-yarn sequelize-cli model:generate --name Task --attributes due_date:date,effort:integer,title:string,description:string,order:integer,status:string,path:string,folder:string,type:string,filename:string,size:string,user_id:string,project_id:string
+yarn sequelize-cli model:generate --name Task --attributes \
+due_date:date,\
+effort:integer,\
+title:string,\
+description:text,\
+order:integer,\
+status:enum,\
+user_id:integer,\
+project_id:integer
+
+# path:string,
+# folder:string,
+# type:string,
+# filename:string,
+# size:string,
 
