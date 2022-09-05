@@ -28,6 +28,8 @@ yarn sequelize-cli mode:generate --name tasks --attributes \
 yarn sequelize-cli db:migrate
 
 
+# criar uma migration
+yarn sequelize-cli migration:generate --name add-upload-to-task 
 
 
 history:
@@ -61,6 +63,13 @@ docker run --name meu-postgres --network=postgres-network -e "POSTGRES_PASSWORD=
 docker run --name meu-pgadmin --network=postgres-network -p 15432:80 -e "PGADMIN_DEFAULT_EMAIL=fernando.carvalho.iff@gmail.com" -e "PGADMIN_DEFAULT_PASSWORD=secret" -d dpage/pgadmin4
 
 docker ps
+
+docker container ls -a
+
+docker start meu-postgres
+docker stop meu-postgres
+docker start meu-pgadmin
+docker stop meu-pgadmin
 
 # acessar via prompt
 psql admin -h localhost -U postgres
