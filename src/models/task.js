@@ -25,13 +25,13 @@ import Sequelize, { Model } from 'sequelize';
           'approved',
           'rejected'
         ),
+        user_id: Sequelize.INTEGER,
+        project_id: Sequelize.INTEGER,
         path: Sequelize.STRING,
         folder: Sequelize.STRING,
         type: Sequelize.STRING,
         filename: Sequelize.STRING,
         size: Sequelize.INTEGER,
-        user_id: Sequelize.INTEGER,
-        project_id: Sequelize.INTEGER,
       }, {
         sequelize,
         name: {

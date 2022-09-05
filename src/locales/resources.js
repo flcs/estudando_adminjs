@@ -39,8 +39,11 @@ export default {
             effort: 'Esforço',
             title: 'Título',
             description: 'Descrição',
+            order: 'Prioridade',
+            attachment: 'Anexo',
             userId: 'Responsável',
             projectId: 'Projeto',
+            ...commonProps,
         },
     }
 }
