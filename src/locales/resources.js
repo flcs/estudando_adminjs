@@ -7,7 +7,7 @@ const commonProps = {
 export default {
     users: {
         actions: {
-            resetPasswrd: 'Redefinir Senha'
+            resetPassword: 'Redefinir Senha'
         },
         properties: {
             id: 'ID',

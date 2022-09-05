@@ -9,6 +9,8 @@ import express from 'express';
 
 // import User from './models/user';
 import UsersResrource from './resources/UsersResource';
+import ProjectsResource from "./resources/ProjectsResource";
+
 
 import locale from './locales'
 
@@ -21,31 +23,8 @@ const app = express();
 const adminJS = new AdminJS({
     databases: [],
     rootPath: '/admin',
-    resources: [UsersResrource],
-    locale: {
-        translations: {
-            actions: {
-                new: "Criar Novo"
-            },
-            labels: {
-                users: "Usuários"
-            },
-            resources: {
-                users: {
-                    actions: {
-                        resetPassword: "Redefinir Senha"
-                    },
-                    properties: {
-                        name: "Nome",
-                        initials: "Iniciais",
-                        status: "Estado",
-                        createdAt: "Criado em",
-                        updatedAt: "Atualizado em",
-                    }
-                }
-            }
-        }
-    }
+    resources: [UsersResrource, ProjectsResource],
+    ...locale
 });
 
 const router = AdminJSExpress.buildRouter(adminJS);

@@ -1,36 +1,42 @@
 'use strict';
 module.exports = {
-  async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Projects', {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.createTable('projects', {
       id: {
+        type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT,
       },
       status: {
-        type: Sequelize.STRING
+        type: Sequelize.ENUM('active', 'archived'),
+        allowNull: false,
       },
       user_id: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER,
+        references: { model: 'users', key: 'id'},
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
+        allowNull: false,
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE
       }
     });
   },
-  async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Projects');
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.dropTable('projects');
   }
 };
