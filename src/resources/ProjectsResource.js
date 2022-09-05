@@ -33,7 +33,7 @@ export default {
                     { value: 'active', label: 'Ativo' },
                     { value: 'archived', label: 'Arquivado' },
                 ],
-                isVisible: { list: true, filter: true, show: true, edit: false },
+                isVisible: { list: true, filter: true, show: true, edit: true },
             },
             createdAt: {
                 position: 7,
