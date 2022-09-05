@@ -1,10 +1,10 @@
 import AdminJs from 'adminjs';
+import uploadFeature from '@adminjs/upload'
 
 import * as path from 'path';
 
-import credentials from '../config/credentials'
-import uploadFeature from '@adminjs/upload'
 import Task from '../models/task';
+import credentials from '../config/credentials';
 
 export default {
     resource: Task,
@@ -75,12 +75,6 @@ export default {
             attachment: {
                 position: 12,
             },
-            user_id: {
-                isVisible: false,
-            },
-            project_id: {
-                isVisible: false,
-            },
             path: {
                 isVisible: false,
             },
@@ -96,25 +90,36 @@ export default {
             size: {
                 isVisible: false,
             },
+            user_id: {
+                isVisible: false,
+            },
+            project_id: {
+                isVisible: false,
+            },
         },
-        features: [
-            uploadFeature({
-                provider: {
-                    // aws: credentials,
-                    local: {
-                        bucket: path.join(__dirname, '../../uploads')
-                    }
-                },
-                properties: {
-                    key: 'path',
-                    bucket: 'folder',
-                    mimeType: 'type',
-                    size: 'size',
-                    filename: 'filename',
-                    file: 'attachment'
+        features: [ uploadFeature({
+            provider: {
+                // aws: credentials,
+                local: {
+                    bucket: path.join(__dirname, '../../uploads')
                 }
-            }
-        )]
+            },
+            properties: {
+                file: 'attachment',
+                key: 'path',
+                bucket: 'folder',
+                mimeType: 'type',
+                size: 'size',
+                filename: 'filename',
+            },
+
+            validation: {
+                mimeTypes: [
+                    'image/png',
+                    'application/pdf'
+                ],
+            },
+        })]
     }
 };
 
